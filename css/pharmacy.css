@@ -1,0 +1,318 @@
+body {
+    margin: 0;
+}
+
+/* red background, center aligned */
+.heading {
+    padding: 1em;
+    background-color: rgb(104, 102, 102);
+    text-align: center;
+}
+
+
+
+.heading h1 {
+    margin: 0;
+    color: white;
+    text-align: end;
+    font-size:4em;
+
+}
+
+.footer{
+    
+    padding: 1em;
+    background-color: black;
+    text-align: center;
+    
+}
+
+.footer a{
+
+    color: white;
+
+}
+
+/* select menu and provide #777 as background color */
+.nav {
+    /* when the parent (body) scrolls, and this element is about to cross the top edge, it instead "sticks" */
+    position: -webkit-sticky; /* to support old Chrome, Safari, Opera browsers */
+    position: sticky;
+    top: 0px;
+    background-color: rgb(199, 196, 196);
+    z-index: 99;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+}
+
+.menu > li {
+    display: inline-block;
+    padding: 0.5em;
+}
+
+.menu > li:hover {
+    background-color: black;
+}
+
+.menu > li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sub-menu-container {
+    position: relative;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* The .sub-menu, which is within the .sub-menu-container over which the user is hovering, is to be shown */
+.sub-menu-container:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu > li a {
+    display: inline-block;
+    width: 120px;
+    padding: 0.5em;
+    color: black;
+}
+
+.sub-menu > li:hover a {
+    background-color: black;
+    color: white;
+}
+
+.main-content {
+    margin: 0;
+    padding: 0.5em;
+    
+    
+    
+  }
+
+.img {
+    width: 100%;
+    position:relative;  
+    border: 2px solid steelblue;
+    
+  
+}
+
+.fading >  img {
+    width: 100%;
+    position:relative;  
+    border: 2px solid steelblue;
+    }
+
+.fade {
+        width: 100%;
+        animation-name: fade;
+        animation-duration: 15s;
+        
+}
+
+@keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+}
+      
+/*.fading img.img1 {
+    animation-delay: 0s;
+    animation-name: FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+        }
+
+
+.fading img.img2 {
+    animation-delay: 2s;
+    animation-name: FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+}
+
+.fading img.img3 {
+    animation-delay: 4s;
+    animation-name: FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+}
+
+.fading img.img4 {
+    animation-delay: 6s;
+    animation-name: FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+}
+
+.fading img.img5 {
+    animation-delay: 8s;
+    animation-name: FadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: alternate;
+}*/
+
+
+/*  
+.fading  img:nth-child(5) {
+      /*The last item always on the top, direction will goes from last to first
+      animation: FadeInOut 10s;
+    }
+.fading   img:nth-child(4) {
+      /*Put animation length double the delay (in this case delay is the actual animation length)
+      animation: FadeInOut 10s 5s       
+    }
+.fading   img:nth-child(3) {
+      animation: FadeInOut 10s 5s;
+    }
+.fading img:nth-child(2) {
+      animation: FadeInOut 10s 5s;
+    }
+.fading img:nth-child(1) {
+    opacity: 1;
+    }
+*/
+
+.container{
+    width: 100%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    animation: slide 20s infinite;
+}
+
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    55%{
+        transform: translateX(-200%);
+    }
+    75%{
+        transform: translateX(-200%);
+    }
+    80%{
+        transform: translateX(-300%);
+    }
+    100%{
+        transform: translateX(-300%);
+    }
+}
+
+.wrapper >  img {
+    width: 100%;
+    position:relative;  
+    border: 2px solid steelblue;
+    }
+
+
+/* Slider */
+#slider{
+    width:100%;
+    height:500px;
+    position:relative;
+    overflow:hidden;
+    border: 2px solid steelblue;
+  }
+  @keyframes load{
+    from{left:-100%;}
+    to{left:0;}
+  }
+  .slides{
+    width:400%;
+    height:100%;
+    position:relative;
+    /*-webkit-animation:slide 30s infinite;
+    -moz-animation:slide 30s infinite;*/
+    animation:slide 30s infinite;
+  }
+  .slider{
+    width:25%;
+    height:100%;
+    float:left;
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+  }
+  .slide img{
+    width:100%;
+    height:100%;
+  }
+  .slide img{
+    width:100%;
+    height:100%;
+  }
+  .image{
+    width:100%;
+    height:100%;
+  }
+  .image img{
+    width:100%;
+    height:100%;
+  }
+
+/* Animation */
+  @keyframes slide{
+    0%,100%{
+      margin-left:0%;
+    }
+    21%{
+      margin-left:0%;
+    }
+    25%{
+      margin-left:-100%;
+    }
+    46%{
+      margin-left:-100%;
+    }
+    50%{
+      margin-left:-200%;
+    }
+    71%{
+      margin-left:-200%;
+    }
+    75%{
+      margin-left:-300%;
+    }
+    96%{
+      margin-left:-300%;
+    }
+  }
+                

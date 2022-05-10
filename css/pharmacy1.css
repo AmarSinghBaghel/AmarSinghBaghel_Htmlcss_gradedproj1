@@ -1,0 +1,224 @@
+body {
+    margin: 0;
+}
+
+/* red background, center aligned */
+.heading {
+    padding: 1em;
+    background-color: rgb(104, 102, 102);
+    text-align: center;
+}
+
+
+
+.heading h1 {
+    margin: 0;
+    color: white;
+    text-align: end;
+    font-size:4em;
+
+}
+
+.footer{
+    
+    padding: 1em;
+    background-color: black;
+    text-align: center;
+    
+}
+
+.footer a{
+
+    color: white;
+
+}
+
+/* select menu and provide #777 as background color */
+.nav {
+    /* when the parent (body) scrolls, and this element is about to cross the top edge, it instead "sticks" */
+    position: -webkit-sticky; /* to support old Chrome, Safari, Opera browsers */
+    position: sticky;
+    top: 0px;
+    background-color: rgb(199, 196, 196);
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+}
+
+.menu > li {
+    display: inline-block;
+    padding: 0.5em;
+}
+
+.menu > li:hover {
+    background-color: black;
+}
+
+.menu > li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sub-menu-container {
+    position: relative;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* The .sub-menu, which is within the .sub-menu-container over which the user is hovering, is to be shown */
+.sub-menu-container:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu > li a {
+    display: inline-block;
+    width: 120px;
+    padding: 0.5em;
+    color: black;
+}
+
+.sub-menu > li:hover a {
+    background-color: black;
+    color: white;
+}
+
+.main-content {
+    margin: 0;
+    padding: 0.5em;
+    
+    
+    
+  }
+
+.img {
+    width: 100%;
+    position:relative;  
+    border: 2px solid steelblue;
+    
+  
+}
+
+.fading  {
+    width: 100%;
+    height:404px;
+    position:relative; 
+    overflow:hidden; 
+    border: 2px solid steelblue;
+    }
+
+/*.img{
+    animation-name: FadeInOut;
+    animation-iteration-count: infinite;
+    animation-delay: 8s;
+    animation-duration: 5s;
+    animation-direction: alternate;
+
+
+}*/
+
+/*
+.fading img:nth-child(6) {
+    /*The last item always on the top, direction will goes from last to first
+    animation: xfade 15s;
+  }
+  .fading img:nth-child(5) {
+    /*Put animation length double the delay (in this case delay is the actual animation length)
+    animation: xfade 30s 15s;
+  }
+  .fading img:nth-child(4) {
+    animation: xfade 30s 15s;
+  }
+  .fading img:nth-child(3) {
+    animation: xfade 30s 15s;
+  }
+  .fading img:nth-child(2) {
+    animation: xfade 30s 15s;
+  }
+  .fading img:nth-child(1) {
+    opacity: 1;
+  }
+  */
+@keyframes FadeInOut {
+        0% {
+          opacity: 0;
+        }
+        2%,
+        25% {
+          opacity: 1;
+        }
+        27% {
+          opacity: 0;
+        }
+}
+
+@keyframes xfade{ 
+        0%{opacity:0}
+        33% {opacity:1;}
+        100%{opacity:0}
+}
+
+
+.fading img {
+    position: relative;
+    opacity: 0;
+  }
+  
+  .fading img {
+    animation: xfade-25pct 60s 2;
+  }
+  
+  .fading img:nth-child(2) {
+    animation-delay: 15s;
+  }
+  
+  .fading img:nth-child(3) {
+    animation-delay: 30s, 120s;
+    animation-name: xfade-50pct, show;
+    animation-duration: 60s, 1s;
+    animation-iteration-count: 2, 1;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes xfade-25pct {
+    0% {
+      opacity: 0;
+    }
+    2%,
+    25% {
+      opacity: 1;
+    }
+    27% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes xfade-50pct {
+    0% {
+      opacity: 0;
+    }
+    2%,
+    50% {
+      opacity: 1;
+    }
+    52% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes show {
+    0%,
+    100% {
+      opacity: 1;
+    }
+  }
